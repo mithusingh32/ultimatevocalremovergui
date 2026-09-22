@@ -41,7 +41,7 @@ These bundles contain the UVR interface, Python, PyTorch, and other dependencies
 ### Manual Windows Installation
 
 - Download and extract the repository [here](https://github.com/Anjok07/ultimatevocalremovergui/archive/refs/heads/master.zip)
-- Download and install Python [here](https://www.python.org/ftp/python/3.9.8/python-3.9.8-amd64.exe)
+- Download and install Python [here](https://www.python.org/ftp/python/3.14.7/python-3.14.7-amd64.exe)
    - Make sure to check "Add python.exe to PATH" during the install
 - Run the following commands from the extracted repo directory:
 
@@ -52,7 +52,7 @@ python.exe -m pip install -r requirements.txt
 If you have a compatible Nvidia GPU, run the following command:
 
 ```
-python.exe -m pip install --upgrade torch --extra-index-url https://download.pytorch.org/whl/cu117
+python.exe -m pip install --upgrade torch --extra-index-url https://download.pytorch.org/whl/cu130
 ```
 
 If you do not have FFmpeg or Rubber Band installed and want to avoid going through the process of installing them the long way, follow the instructions below.
@@ -117,7 +117,7 @@ In order to use the Time Stretch or Change Pitch tool, you'll need Rubber Band.
 ### Manual MacOS Installation
 
 - Download and save this repository [here](https://github.com/Anjok07/ultimatevocalremovergui/archive/refs/heads/master.zip)
-- Download and install Python 3.10 [here](https://www.python.org/ftp/python/3.10.9/python-3.10.9-macos11.pkg)
+- Download and install Python 3.14 [here](https://www.python.org/ftp/python/3.14.7/python-3.14.7-macos11.pkg)
 - From the saved directory run the following - 
 
 ```
@@ -127,7 +127,7 @@ pip3 install -r requirements.txt
 - If your Mac is running with an M1, please run the following command next. If not, skip this step. - 
 
 ```
-cp /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/_soundfile_data/libsndfile_arm64.dylib /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/_soundfile_data/libsndfile.dylib
+cp /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/_soundfile_data/libsndfile_arm64.dylib /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/_soundfile_data/libsndfile.dylib
 ```
 
 **FFmpeg Installation**
@@ -170,13 +170,13 @@ Use the following commands based on your system type:
 **For Debian-based systems (Ubuntu, Mint, etc.):**
 ```bash
 sudo apt update && sudo apt upgrade
-sudo apt-get install -y ffmpeg python3-pip python3-tk
+sudo apt-get install -y ffmpeg python3-pip python3-tk python3-tix
 ```
 
 **For Arch-based systems (EndeavourOS):**
 ```bash
 sudo pacman -Syu
-sudo pacman -S ffmpeg python-pip tk
+sudo pacman -S ffmpeg python-pip tk tix
 ```
 
 ---
