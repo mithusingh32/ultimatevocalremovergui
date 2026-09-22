@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environments
+.venv/
+
+# UVR runtime artifacts
+data.pkl
+ensemble_temps/
+temp_sample_clips/
