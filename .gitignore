@@ -9,3 +9,4 @@ __pycache__/
 data.pkl
 ensemble_temps/
 temp_sample_clips/
+gui_data/cr_text.txt
