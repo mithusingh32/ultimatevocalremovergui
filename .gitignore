@@ -10,3 +10,12 @@ data.pkl
 ensemble_temps/
 temp_sample_clips/
 gui_data/cr_text.txt
+
+# Downloaded model weights & fetched model repos (large binaries, not source)
+*.onnx
+*.onnx.data
+*.ckpt
+*.th
+*.pt
+*.bin
+models/Demucs_Models/v3_v4_repo/
