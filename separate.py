@@ -481,7 +481,7 @@ class SeperateMDX(SeperateAttributes):
             self.start_inference_console_write()
 
             if self.is_mdx_ckpt:
-                model_params = torch.load(self.model_path, map_location=lambda storage, loc: storage)['hyper_parameters']
+                model_params = torch.load(self.model_path, map_location=lambda storage, loc: storage, weights_only=False)['hyper_parameters']
                 self.dim_c, self.hop = model_params['dim_c'], model_params['hop_length']
                 separator = MdxnetSet.ConvTDFNet(**model_params)
                 self.model_run = separator.load_from_checkpoint(self.model_path).to(self.device).eval()
@@ -820,7 +820,7 @@ class SeperateDemucs(SeperateAttributes):
             if self.demucs_version == DEMUCS_V1:
                 if str(self.model_path).endswith(".gz"):
                     self.model_path = gzip.open(self.model_path, "rb")
-                klass, args, kwargs, state = torch.load(self.model_path)
+                klass, args, kwargs, state = torch.load(self.model_path, weights_only=False)
                 self.demucs = klass(*args, **kwargs)
                 self.demucs.to(self.device) 
                 self.demucs.load_state_dict(state)

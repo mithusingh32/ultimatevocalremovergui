@@ -4614,7 +4614,7 @@ class MainWindow(TkinterDnD.Tk if is_dnd_compatible else tk.Tk):
                 
             if model_path.endswith(CKPT):
                 is_ckpt = True
-                model_params = torch.load(model_path, map_location=lambda storage, loc: storage)
+                model_params = torch.load(model_path, map_location=lambda storage, loc: storage, weights_only=False)
                 model_params = model_params['hyper_parameters']
                 dim_f = model_params['dim_f']
                 dim_t = int(math.log(model_params['dim_t'], 2))
